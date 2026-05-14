@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe</title>
+    <title>Tic Tac Toe Online</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Tic Tac Toe</h1>
-    <div id="board"></div>
-    <button id="reset">Reset Game</button>
+    <h1>Tic Tac Toe Online</h1>
+    <div id="login">
+        <input type="text" id="username" placeholder="Enter your username" maxlength="20">
+        <button id="joinBtn">Join Game</button>
+    </div>
+    <div id="waiting" style="display: none;">
+        <p>Waiting for an opponent...</p>
+    </div>
+    <div id="game" style="display: none;">
+        <p id="status">Your turn</p>
+        <div id="board"></div>
+        <button id="reset">Reset Game</button>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

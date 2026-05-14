@@ -1,29 +1,56 @@
-# Tic Tac Toe
+# Tic Tac Toe Online
 
-A classic Tic Tac Toe game built with HTML, CSS, and JavaScript.
+A real-time multiplayer Tic Tac Toe game built with Node.js, Express, Socket.io, HTML, CSS, and JavaScript.
 
 ## Features
 
-- Interactive 3x3 grid
-- Alternating turns between X and O
-- Win detection and draw detection
-- Highlighting of winning cells
-- Reset button to start a new game
-- Responsive design with hover effects
+- **Online Multiplayer**: Play against other players in real-time
+- **User Sign-in**: Enter a username to join games
+- **Automatic Matchmaking**: Get paired with waiting players
+- **Real-time Updates**: Moves are synchronized instantly
+- **Win Detection**: Highlights winning combinations
+- **Draw Detection**: Handles tied games
+- **Reset Functionality**: Start a new game with the same opponent
+- **Responsive Design**: Works on different screen sizes
+- **Smooth Animations**: Hover effects and winning cell animations
+
+## How to Run
+
+### Prerequisites
+- Node.js installed on your system
+
+### Installation
+1. Clone the repository or download the files
+2. Navigate to the project directory
+3. Run `npm install` to install dependencies
+
+### Starting the Server
+1. Run `npm start` to start the server
+2. Open your browser and go to `http://localhost:3000`
+3. Enter a username and click "Join Game"
+4. Wait for another player to join, or open another browser tab/window to test locally
 
 ## How to Play
 
-1. Open `index.html` in your web browser.
-2. Click on an empty cell to place your mark (X or O).
-3. Players alternate turns.
-4. The first player to get three in a row (horizontally, vertically, or diagonally) wins.
-5. If all cells are filled without a winner, it's a draw.
-6. Click "Reset Game" to start over.
+1. Enter your username and join a game
+2. Wait for an opponent to be matched
+3. Take turns placing X's and O's on the 3x3 grid
+4. The first player to get three in a row wins
+5. If the board fills without a winner, it's a draw
+6. Click "Reset Game" to play again with the same opponent
 
 ## Files
 
-- `index.html`: The main HTML structure
-- `style.css`: Styling for the game board and elements
-- `script.js`: Game logic and interactivity
+- `server.js`: Node.js server with Socket.io for real-time communication
+- `index.html`: Main HTML structure with login and game UI
+- `style.css`: Styling for all game elements
+- `script.js`: Client-side game logic and Socket.io integration
+- `package.json`: Node.js dependencies and scripts
 
-Enjoy the game!
+## Technologies Used
+
+- **Backend**: Node.js, Express, Socket.io
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **Real-time Communication**: WebSockets via Socket.io
+
+Enjoy playing Tic Tac Toe online!
