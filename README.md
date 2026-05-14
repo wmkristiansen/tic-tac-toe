@@ -2,6 +2,8 @@
 
 A real-time multiplayer Tic Tac Toe game built with Node.js, Express, Socket.io, HTML, CSS, and JavaScript.
 
+**[🎮 Play Now](https://wmkristiansen.github.io/tic-tac-toe/)**
+
 ## Features
 
 - **Online Multiplayer**: Play against other players in real-time
