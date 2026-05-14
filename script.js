@@ -1,4 +1,6 @@
-const socket = io();
+import config from './config.js';
+
+const socket = io(config.serverUrl);
 let gameId = null;
 let playerIndex = null;
 let opponent = null;

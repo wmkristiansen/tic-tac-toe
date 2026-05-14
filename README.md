@@ -47,10 +47,37 @@ A real-time multiplayer Tic Tac Toe game built with Node.js, Express, Socket.io,
 - `script.js`: Client-side game logic and Socket.io integration
 - `package.json`: Node.js dependencies and scripts
 
-## Technologies Used
+## Deployment
 
-- **Backend**: Node.js, Express, Socket.io
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
-- **Real-time Communication**: WebSockets via Socket.io
+### GitHub Pages (Frontend Only)
+The frontend is automatically deployed to GitHub Pages on every push to main branch.
 
-Enjoy playing Tic Tac Toe online!
+**Note**: GitHub Pages serves static files only. For full multiplayer functionality, deploy the backend separately (see below).
+
+To enable GitHub Pages:
+1. Go to your repository settings
+2. Scroll to "Pages" section
+3. Select "GitHub Actions" as source
+4. The site will be available at `https://wmkristiansen.github.io/tic-tac-toe/`
+
+### Backend Deployment
+For multiplayer to work, deploy the server to a platform that supports Node.js:
+
+#### Heroku (Recommended)
+1. Create a Heroku account
+2. Install Heroku CLI
+3. Run:
+   ```bash
+   heroku create your-app-name
+   git push heroku main
+   ```
+4. Update `config.js` with your Heroku app URL
+5. Push the updated config to trigger a new Pages build
+
+#### Other Options
+- Vercel
+- Railway
+- Render
+- DigitalOcean App Platform
+
+Update the `serverUrl` in `config.js` to point to your deployed server.
