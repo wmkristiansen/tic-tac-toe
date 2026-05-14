@@ -8,9 +8,188 @@ body {
 
 h1 {
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
+h2 {
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+/* Setup Screen */
+#setup-screen {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.setup-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.setup-container h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.player-setup {
+    margin: 20px 0;
+}
+
+.player-input-group {
+    margin: 15px 0;
+    text-align: left;
+}
+
+.player-input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+.player-input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.player-input-group input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+/* Buttons */
+.btn-primary {
+    padding: 12px 30px;
+    font-size: 1.1em;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    margin: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 5px;
+}
+
+.btn-secondary:hover {
+    background-color: #2980b9;
+}
+
+.btn-danger {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 5px;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
+/* Scoreboard */
+#scoreboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+.score-card {
+    background-color: #fff;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    min-width: 120px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.score-card.active-player {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    border: 2px solid #3498db;
+}
+
+.score-card.winner-highlight {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+    border: 2px solid #2ecc71;
+    background-color: #e8f8f5;
+}
+
+.score-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.score-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.score-stats .wins {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.score-stats .losses {
+    color: #e74c3c;
+}
+
+.score-divider {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #999;
+}
+
+/* Game Status */
+#game-status {
+    margin: 15px 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+#current-turn {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Game Board */
 #board {
     display: grid;
     grid-template-columns: repeat(3, 120px);
@@ -47,6 +226,70 @@ h1 {
 
 .cell.x {
     color: #e74c3c;
+}
+
+.cell.o {
+    color: #3498db;
+}
+
+.winning {
+    background-color: #f1c40f !important;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Result Message */
+#result-message {
+    margin: 20px 0;
+    font-size: 1.5em;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.winner-text {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.draw-text {
+    color: #f39c12;
+    font-weight: bold;
+}
+
+/* Controls */
+.controls {
+    margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    #board {
+        grid-template-columns: repeat(3, 90px);
+        grid-template-rows: repeat(3, 90px);
+        gap: 8px;
+    }
+
+    .cell {
+        width: 90px;
+        height: 90px;
+        font-size: 2.5em;
+    }
+
+    #scoreboard {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .score-divider {
+        display: none;
+    }
 }
 
 .cell.o {

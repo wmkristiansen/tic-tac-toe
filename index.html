@@ -3,24 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe Online</title>
+    <title>Tic Tac Toe - Local Two Player</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Tic Tac Toe Online</h1>
-    <div id="login">
-        <input type="text" id="username" placeholder="Enter your username" maxlength="20">
-        <button id="joinBtn">Join Game</button>
+    <h1>Tic Tac Toe</h1>
+    <h2>Local Two Player</h2>
+
+    <!-- Player Setup Screen -->
+    <div id="setup-screen">
+        <div class="setup-container">
+            <h3>Enter Player Names</h3>
+            <div class="player-setup">
+                <div class="player-input-group">
+                    <label for="player1-name">Player 1 (X)</label>
+                    <input type="text" id="player1-name" placeholder="Enter name" maxlength="20" value="Player 1">
+                </div>
+                <div class="player-input-group">
+                    <label for="player2-name">Player 2 (O)</label>
+                    <input type="text" id="player2-name" placeholder="Enter name" maxlength="20" value="Player 2">
+                </div>
+            </div>
+            <button id="start-btn" class="btn-primary">Start Game</button>
+        </div>
     </div>
-    <div id="waiting" style="display: none;">
-        <p>Waiting for an opponent...</p>
-    </div>
-    <div id="game" style="display: none;">
-        <p id="status">Your turn</p>
+
+    <!-- Game Screen -->
+    <div id="game-screen" style="display: none;">
+        <!-- Scoreboard -->
+        <div id="scoreboard">
+            <div class="score-card" id="score-p1">
+                <div class="score-name" id="score-name-p1">Player 1</div>
+                <div class="score-stats">
+                    <span class="wins">Wins: <span id="wins-p1">0</span></span>
+                    <span class="losses">Losses: <span id="losses-p1">0</span></span>
+                </div>
+            </div>
+            <div class="score-divider">VS</div>
+            <div class="score-card" id="score-p2">
+                <div class="score-name" id="score-name-p2">Player 2</div>
+                <div class="score-stats">
+                    <span class="wins">Wins: <span id="wins-p2">0</span></span>
+                    <span class="losses">Losses: <span id="losses-p2">0</span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Status -->
+        <div id="game-status">
+            <span id="current-turn">Player 1's turn (X)</span>
+        </div>
+
+        <!-- Game Board -->
         <div id="board"></div>
-        <button id="reset">Reset Game</button>
+
+        <!-- Game Result -->
+        <div id="result-message" style="display: none;"></div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="play-again-btn" class="btn-secondary" style="display: none;">Play Again</button>
+            <button id="new-players-btn" class="btn-secondary">New Players</button>
+            <button id="reset-scores-btn" class="btn-danger">Reset Scores</button>
+        </div>
     </div>
-    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
-    <script type="module" src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
